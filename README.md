@@ -1,69 +1,76 @@
-# React + TypeScript + Vite
+# 🧠 KonoATS – System wspomagający rekrutację
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**KonoATS** to aplikacja typu **ATS (Applicant Tracking System)** stworzona z myślą o małych i średnich firmach, startupach oraz rekruterach technicznych. Projekt ma charakter edukacyjny i demonstracyjny, ale zachowuje strukturę zgodną ze standardami produkcyjnymi.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Główne funkcje
 
-## Expanding the ESLint configuration
+🔐 **Część chroniona – panel rekrutera (PWA)**:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📊 **Dashboard** – szybki przegląd aktywności i statystyk
+- 📌 **Oferty pracy** – tworzenie, edycja, archiwizacja
+- 👤 **Kandydaci** – przeglądanie aplikacji, CV, notatki, zadania rekrutacyjne
+- 🔄 **Pipeline rekrutacyjny** – etapy typu _Applied → Interview → Offer → Rejected_
+- ✉️ **Mailing** – wysyłka szablonowych wiadomości (zaproszenia, oferty, odrzucenia)
+- 📈 **Statystyki** (opcjonalne)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠️ Technologie
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🎯 Frontend (PWA)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **React 18 + TypeScript**
+- **Vite** – szybki bundler i dev server
+- **Redux Toolkit** – globalny store + async API slice
+- **React Router v6**
+- **React Hook Form + Zod** – formularze i walidacja
+- **TailwindCSS + CSS Modules** – design system
+- **PWA** – instalowalna aplikacja webowa (manifest, offline, cache)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 🧩 Backend
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **.NET 8 (C#)**
+- **Entity Framework Core (Code First) + PostgreSQL**
+- **REST API**
+- **Autoryzacja JWT**
+- **Wysyłka maili**: SMTP lub MailerSend (w zależności od dostępności)
+- **FluentValidation** – walidacja po stronie backendu
+- **Serwowanie API**: lokalnie / Railway / Render (free-tier)
+
+---
+
+## 🔐 Bezpieczeństwo i prywatność
+
+Wszystkie klucze API oraz adresy backendowe znajdują się w .env i nie są commitowane.
+
+W pliku .env.example znajdują się przykładowe dane do uruchomienia lokalnie.
+
+Zmienne frontendowe muszą mieć prefix VITE_.
+
+---
+
+## 👨‍💻 Autor
+Kamil Konopski
+
+Frontend Developer & twórca projektu
+
+Repozytorium stworzone do nauki, rozwoju portfolio i eksperymentów technologicznych.
+
+---
+
+## 📜 Licencja
+Projekt objęty autorską licencją (poniżej).
+
+Nie zezwala się na:
+
+wykorzystywanie kodu w projektach komercyjnych,
+
+modyfikację i udostępnianie kodu jako własnego,
+
+klonowanie repozytorium w celach dystrybucyjnych lub sprzedażowych.
+
+Kod może być przeglądany, uruchamiany lokalnie i wykorzystywany do celów edukacyjnych.
+
+Więcej informacji: LICENSE
