@@ -4,7 +4,6 @@ export enum Paths {
 
   // Auth
   LOGIN = "/auth/login",
-  REGISTER = "/auth/register",
 
   // Protected
   DASHBOARD = "/dashboard",

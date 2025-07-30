@@ -5,7 +5,6 @@ import MainLayout from "./components/Layout/MainLayout";
 import ProtectedRoute from "./router/ProtectedRoute";
 
 import LoginPage from "./components/Auth/LoginPage";
-import RegisterPage from "./components/Auth/RegisterPage";
 
 import DashboardPage from "./components/DashboardPage/DashboardPage";
 import OffersPage from "./components/OffersPage/OffersPage";
@@ -38,7 +37,6 @@ const App = () => {
 
         <Route element={<AuthLayout />}>
           <Route path={Paths.LOGIN} element={<LoginPage />} />
-          <Route path={Paths.REGISTER} element={<RegisterPage />} />
         </Route>
 
         <Route
