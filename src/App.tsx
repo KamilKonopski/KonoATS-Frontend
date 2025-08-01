@@ -1,4 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useAuth } from "./store/hooks/useAuth";
+import { checkAuth } from "./store/auth/authApi";
+import { useAppDispatch } from "./store/hooks/useAppDispatch";
 
 import AuthLayout from "./components/Layout/AuthLayout";
 import MainLayout from "./components/Layout/MainLayout";
@@ -16,10 +19,17 @@ import StatsPage from "./components/StatsPage/StatsPage";
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 
 import { Paths } from "./common/constants/paths";
+import { useEffect } from "react";
 
 const App = () => {
-  // const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated)
-  const isAuthenticated = !localStorage.getItem("token");
+  const dispatch = useAppDispatch();
+  const { isAuthenticated, isAuthLoaded } = useAuth();
+
+  useEffect(() => {
+    dispatch(checkAuth());
+  }, [dispatch]);
+
+  if (!isAuthLoaded) return null;
 
   return (
     <BrowserRouter>
