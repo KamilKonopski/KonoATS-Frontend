@@ -1,4 +1,5 @@
 import DashboardIcon from "./DashboardIcon";
+import OffersIcon from "./OffertsIcon";
 import PipelineIcon from "./PipelineIcon";
 import CandidatesIcon from "./CandidatesIcon";
 import MailingIcon from "./MailingIcon";
@@ -6,14 +7,7 @@ import StatsIcon from "./StatsIcon";
 import SettingsIcon from "./SettingsIcon";
 import UserIcon from "./UserIcon";
 
-type IconName =
-  | "dashboard"
-  | "pipeline"
-  | "candidates"
-  | "mailing"
-  | "stats"
-  | "settings"
-  | "user";
+import type { IconName } from "../types/icon";
 
 interface IconProps {
   name?: IconName;
@@ -24,6 +18,7 @@ interface IconProps {
 
 const icons: Record<IconName, React.FC<IconProps>> = {
   dashboard: DashboardIcon,
+  offerts: OffersIcon,
   pipeline: PipelineIcon,
   candidates: CandidatesIcon,
   mailing: MailingIcon,
