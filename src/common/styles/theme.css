@@ -5,6 +5,9 @@
   --color-text-muted: var(--color-text-muted);
   --color-primary: var(--color-primary);
   --color-primary-hover: var(--color-primary-hover);
+  --color-contrast: var(--color-contrast);
+  --color-contrast-muted: var(--color-contrast-muted);
+  --color-secondary: var(--color-secondary);
 
   --font-base: "Inter", system-ui, sans-serif;
   --font-heading: "Poppins", sans-serif;
@@ -44,6 +47,9 @@
   --color-text-muted: #94a3b8;
   --color-primary: oklch(0.75 0.15 270);
   --color-primary-hover: oklch(0.7 0.14 270);
+  --color-contrast: #1e1e2e;
+  --color-contrast-muted: #292b36;
+  --color-secondary: oklch(0.6 0.3 120);
 }
 
 .light {
@@ -53,4 +59,7 @@
   --color-text-muted: #6b7280;
   --color-primary: oklch(0.6 0.15 270);
   --color-primary-hover: oklch(0.57 0.13 270);
+  --color-contrast: #dbdbdb;
+  --color-contrast-muted: #eaeaea;
+  --color-secondary: oklch(0.8 0.2 180);
 }
