@@ -24,7 +24,7 @@
 - **React 18 + TypeScript**
 - **Vite** – szybki bundler i dev server
 - **Redux Toolkit** – globalny store + async API slice
-- **React Router v6**
+- **React Router v7**
 - **React Hook Form + Zod** – formularze i walidacja
 - **TailwindCSS + CSS Modules** – design system
 - **PWA** – instalowalna aplikacja webowa (manifest, offline, cache)
