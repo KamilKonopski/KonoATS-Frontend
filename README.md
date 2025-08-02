@@ -21,7 +21,7 @@
 
 ### 🎯 Frontend (PWA)
 
-- **React 18 + TypeScript**
+- **React 19 + TypeScript**
 - **Vite** – szybki bundler i dev server
 - **Redux Toolkit** – globalny store + async API slice
 - **React Router v7**
