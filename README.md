@@ -19,7 +19,7 @@
 
 ## 🛠️ Technologie
 
-### 🎯 Frontend (PWA)
+### 🎯 Frontend (PWA) (Repozytorium publiczne)
 
 - **React 19 + TypeScript**
 - **Vite** – szybki bundler i dev server
@@ -29,7 +29,7 @@
 - **TailwindCSS + CSS Modules** – design system
 - **PWA** – instalowalna aplikacja webowa (manifest, offline, cache)
 
-### 🧩 Backend
+### 🧩 Backend (Repozytorium prywatne)
 
 - **.NET 8 (C#)**
 - **Entity Framework Core (Code First) + PostgreSQL**
