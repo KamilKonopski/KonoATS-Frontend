@@ -31,13 +31,13 @@
 
 ### 🧩 Backend (Repozytorium prywatne)
 
-- **.NET 8 (C#)**
+- **.NET 9 (C#)**
 - **Entity Framework Core (Code First) + PostgreSQL**
 - **REST API**
 - **Autoryzacja JWT**
-- **Wysyłka maili**: SMTP lub MailerSend (w zależności od dostępności)
+- **Wysyłka maili**: SMTP lub MailerSend
 - **FluentValidation** – walidacja po stronie backendu
-- **Serwowanie API**: lokalnie / Railway / Render (free-tier)
+- **Serwowanie API**: lokalnie / Railway / Render
 
 ---
 
