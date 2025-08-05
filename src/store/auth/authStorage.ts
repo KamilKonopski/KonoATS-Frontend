@@ -1,15 +1,29 @@
-export const setAuthStorage = (email: string, token: string) => {
-  localStorage.setItem("token", token);
-  localStorage.setItem("userEmail", email);
+export const setAuthStorage = (token: string, remember: boolean) => {
+  if (remember) {
+    localStorage.setItem("token", token);
+    sessionStorage.removeItem("token");
+  } else {
+    sessionStorage.setItem("token", token);
+    localStorage.removeItem("token");
+  }
 };
 
 export const clearAuthStorage = () => {
   localStorage.removeItem("token");
-  localStorage.removeItem("userEmail");
+  sessionStorage.removeItem("token");
 };
 
 export const getAuthFromStorage = () => {
-  const token = localStorage.getItem("token");
-  const email = localStorage.getItem("userEmail");
-  return { token, email };
+  const tokenFromLocal = localStorage.getItem("token");
+  const tokenFromSession = sessionStorage.getItem("token");
+
+  if (tokenFromLocal) {
+    return { token: tokenFromLocal, remember: true };
+  }
+
+  if (tokenFromSession) {
+    return { token: tokenFromSession, remember: false };
+  }
+
+  return { token: null, remember: false };
 };

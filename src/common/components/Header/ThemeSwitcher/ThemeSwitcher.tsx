@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { applyTheme, type Theme } from "../../utils/theme";
+import { applyTheme, type Theme } from "../../../utils/theme";
 
 const ThemeSwitcher = () => {
   const [theme, setTheme] = useState<Theme>("light");

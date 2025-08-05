@@ -18,7 +18,6 @@ const VALID_USER = {
 
 const initialState: AuthState = {
   isAuthenticated: false,
-  userEmail: null,
   token: null,
   error: null,
   isAuthLoaded: false,
@@ -28,18 +27,24 @@ const authApi = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    login(state, action: PayloadAction<{ email: string; password: string }>) {
-      const { email, password } = action.payload;
+    login(
+      state,
+      action: PayloadAction<{
+        email: string;
+        password: string;
+        remember?: boolean;
+      }>
+    ) {
+      const { email, password, remember } = action.payload;
 
       if (email === VALID_USER.email && password === VALID_USER.password) {
         const fakeToken = "mocked-jwt-token";
         authApi.caseReducers.loginSuccess(state, {
           type: "auth/loginSuccess",
-          payload: { email, token: fakeToken },
+          payload: { token: fakeToken, remember },
         });
       } else {
         state.isAuthenticated = false;
-        state.userEmail = null;
         state.token = null;
         state.error = "Nieprawidłowe dane logowania.";
         state.isAuthLoaded = true;
@@ -48,21 +53,19 @@ const authApi = createSlice({
 
     loginSuccess: (
       state,
-      action: PayloadAction<{ email: string; token: string }>
+      action: PayloadAction<{ token: string; remember?: boolean }>
     ) => {
-      const { email, token } = action.payload;
+      const { token, remember = true } = action.payload;
       state.isAuthenticated = true;
-      state.userEmail = email;
       state.token = token;
       state.error = null;
       state.isAuthLoaded = true;
 
-      setAuthStorage(email, token);
+      setAuthStorage(token, remember);
     },
 
     logout(state) {
       state.isAuthenticated = false;
-      state.userEmail = null;
       state.token = null;
       state.error = null;
       state.isAuthLoaded = true;
@@ -79,10 +82,10 @@ const authApi = createSlice({
 export const checkAuth = createAsyncThunk(
   "auth/checkAuth",
   async (_, { dispatch }) => {
-    const { token, email } = getAuthFromStorage();
+    const { token, remember } = getAuthFromStorage();
 
-    if (token && email) {
-      dispatch(loginSuccess({ email, token }));
+    if (token) {
+      dispatch(loginSuccess({ token, remember }));
     }
 
     dispatch(authChecked());

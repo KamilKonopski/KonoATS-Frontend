@@ -47,8 +47,8 @@
   --color-text-muted: #94a3b8;
   --color-primary: oklch(0.75 0.15 270);
   --color-primary-hover: oklch(0.7 0.14 270);
-  --color-contrast: #1e1e2e;
-  --color-contrast-muted: #292b36;
+  --color-contrast: #2a2d34;
+  --color-contrast-muted: #333840;
   --color-secondary: oklch(0.6 0.3 120);
 }
 

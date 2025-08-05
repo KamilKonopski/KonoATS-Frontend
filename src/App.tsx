@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "./store/hooks/useAuth";
 import { checkAuth } from "./store/auth/authApi";
@@ -7,7 +8,7 @@ import AuthLayout from "./components/Layout/AuthLayout";
 import MainLayout from "./components/Layout/MainLayout";
 import ProtectedRoute from "./router/ProtectedRoute";
 
-import LoginPage from "./components/Auth/LoginPage";
+import LoginPage from "./components/Authentication/LoginPage";
 
 import DashboardPage from "./components/DashboardPage/DashboardPage";
 import OffersPage from "./components/OffersPage/OffersPage";
@@ -15,11 +16,12 @@ import CandidatesPage from "./components/CandidatesPage/CandidatesPage";
 import PipelinePage from "./components/PipelinePage/PipelinePage";
 import MailingPage from "./components/MailingPage/MailingPage";
 import StatsPage from "./components/StatsPage/StatsPage";
+import ProfilePage from "./components/ProfilePage/ProfilePage";
+import SettingsPage from "./components/SettingsPage/SettingsPage";
 
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 
 import { Paths } from "./common/constants/paths";
-import { useEffect } from "react";
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -62,6 +64,8 @@ const App = () => {
           <Route path={Paths.PIPELINE} element={<PipelinePage />} />
           <Route path={Paths.MAILING} element={<MailingPage />} />
           <Route path={Paths.STATS} element={<StatsPage />} />
+          <Route path={Paths.PROFILE} element={<ProfilePage />} />
+          <Route path={Paths.SETTINGS} element={<SettingsPage />} />
         </Route>
 
         <Route path={Paths.NOT_FOUND} element={<NotFoundPage />} />

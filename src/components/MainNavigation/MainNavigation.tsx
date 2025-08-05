@@ -1,5 +1,4 @@
 import NavigationItem from "./NavigationItem/NavigationItem";
-
 import { navItems } from "./navItems";
 
 const MainNavigation = () => {
