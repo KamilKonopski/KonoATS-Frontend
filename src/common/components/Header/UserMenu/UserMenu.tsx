@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-import { logout } from "../../../../store/auth/authApi";
+import { logout } from "../../../../store/auth/authSlice";
+
 import { Paths } from "../../../constants/paths";
 import Icon from "../../../icons/Icon";
 
