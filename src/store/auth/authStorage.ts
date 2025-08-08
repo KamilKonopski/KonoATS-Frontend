@@ -1,29 +1,18 @@
+const TOKEN_KEY = "token";
+
 export const setAuthStorage = (token: string, remember: boolean) => {
   if (remember) {
-    localStorage.setItem("token", token);
-    sessionStorage.removeItem("token");
+    localStorage.setItem(TOKEN_KEY, token);
   } else {
-    sessionStorage.setItem("token", token);
-    localStorage.removeItem("token");
+    sessionStorage.setItem(TOKEN_KEY, token);
   }
 };
 
 export const clearAuthStorage = () => {
-  localStorage.removeItem("token");
-  sessionStorage.removeItem("token");
+  localStorage.removeItem(TOKEN_KEY);
+  sessionStorage.removeItem(TOKEN_KEY);
 };
 
-export const getAuthFromStorage = () => {
-  const tokenFromLocal = localStorage.getItem("token");
-  const tokenFromSession = sessionStorage.getItem("token");
-
-  if (tokenFromLocal) {
-    return { token: tokenFromLocal, remember: true };
-  }
-
-  if (tokenFromSession) {
-    return { token: tokenFromSession, remember: false };
-  }
-
-  return { token: null, remember: false };
+export const getStoredToken = () => {
+  return localStorage.getItem(TOKEN_KEY) || sessionStorage.getItem(TOKEN_KEY);
 };
