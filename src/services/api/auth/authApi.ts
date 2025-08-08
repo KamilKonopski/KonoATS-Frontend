@@ -1,0 +1,43 @@
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { loginSuccess } from "../../../store/auth/authSlice";
+import { clearAuthStorage, getStoredToken, setAuthStorage } from "../../../store/auth/authStorage";
+
+export const authApi = createApi({
+  reducerPath: "authApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "http://localhost:5432/api",
+    prepareHeaders: (headers) => {
+      const token = getStoredToken();
+
+      if (token) headers.set("Authorization", `Bearer ${token}`);
+      return headers;
+    },
+  }),
+  endpoints: (builder) => ({
+    login: builder.mutation<
+      { token: string },
+      { email: string; password: string; remember: boolean }
+    >({
+      query: ({ email, password }) => ({
+        url: "auth/login",
+        method: "POST",
+        body: { email, password },
+      }),
+      async onQueryStarted({ remember }, { queryFulfilled, dispatch }) {
+        try {
+          const { data } = await queryFulfilled;
+          setAuthStorage(data.token, remember);
+          dispatch(loginSuccess({ token: data.token, remember }));
+        } catch {
+          clearAuthStorage();
+        }
+      },
+    }),
+
+    getMe: builder.query<{ email: string }, void>({
+      query: () => "/auth/me",
+    }),
+  }),
+});
+
+export const { useLoginMutation, useGetMeQuery } = authApi;
