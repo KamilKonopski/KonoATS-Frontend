@@ -1,17 +1,16 @@
 import type { ReactNode } from "react";
+import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { useAuth } from "../store/hooks/useAuth";
+import { Paths } from "../common/constants/paths";
+import type { RootState } from "../store/store";
 
 interface ProtectedRouteProps {
   children: ReactNode;
 }
 
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
-  const { isAuthenticated, isAuthLoaded } = useAuth();
-
-  if (!isAuthLoaded) return null;
-
-  return isAuthenticated ? children : <Navigate to="/auth/login" replace />;
+  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
+  return isAuthenticated ? children : <Navigate to={Paths.LOGIN} replace />;
 };
 
 export default ProtectedRoute;
