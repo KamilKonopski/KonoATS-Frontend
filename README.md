@@ -2,7 +2,13 @@
 
 **KonoATS** to aplikacja typu **ATS (Applicant Tracking System)** stworzona z myślą o małych i średnich firmach, startupach oraz rekruterach technicznych. Projekt ma charakter edukacyjny i demonstracyjny, ale zachowuje strukturę zgodną ze standardami produkcyjnymi.
 
----
+
+
+⭐ Jeśli chcesz zobaczyć, jak projekt się rozwija i dostać powiadomienie o premierze, dodaj gwiazdkę repozytorium!
+
+
+
+ℹ️ Uwaga: To repozytorium zawiera frontend (PWA) projektu KonoATS. Backend (C# / .NET + PostgreSQL) rozwijany jest w repozytorium prywatnym.
 
 ## ✨ Główne funkcje
 
