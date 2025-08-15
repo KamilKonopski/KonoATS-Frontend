@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useAuth } from "./store/hooks/useAuth";
-import { checkAuth } from "./store/auth/authApi";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useAppDispatch } from "./store/hooks/useAppDispatch";
+import { useAuth } from "./store/hooks/useAuth";
 
 import AuthLayout from "./components/Layout/AuthLayout";
 import MainLayout from "./components/Layout/MainLayout";
@@ -10,26 +9,32 @@ import ProtectedRoute from "./router/ProtectedRoute";
 
 import LoginPage from "./components/Authentication/LoginPage";
 
-import DashboardPage from "./components/DashboardPage/DashboardPage";
-import OffersPage from "./components/OffersPage/OffersPage";
 import CandidatesPage from "./components/CandidatesPage/CandidatesPage";
-import PipelinePage from "./components/PipelinePage/PipelinePage";
+import DashboardPage from "./components/DashboardPage/DashboardPage";
 import MailingPage from "./components/MailingPage/MailingPage";
-import StatsPage from "./components/StatsPage/StatsPage";
+import OffersPage from "./components/OffersPage/OffersPage";
+import PipelinePage from "./components/PipelinePage/PipelinePage";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
 import SettingsPage from "./components/SettingsPage/SettingsPage";
+import StatsPage from "./components/StatsPage/StatsPage";
 
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 
 import { Paths } from "./common/constants/paths";
+import { loginSuccess } from "./store/auth/authSlice";
+import { getStoredToken } from "./store/auth/authStorage";
 
 const App = () => {
   const dispatch = useAppDispatch();
   const { isAuthenticated, isAuthLoaded } = useAuth();
 
   useEffect(() => {
-    dispatch(checkAuth());
-  }, [dispatch]);
+    const token = getStoredToken();
+
+    if (token) {
+      dispatch(loginSuccess({ token, remember: true }));
+    }
+  }, []);
 
   if (!isAuthLoaded) return null;
 

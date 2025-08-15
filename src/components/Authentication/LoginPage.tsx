@@ -1,6 +1,5 @@
-import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import Button from "../../common/components/Button/Button";
 import CheckBox from "../../common/components/Form/CheckBox/CheckBox";
@@ -8,27 +7,25 @@ import FormContainer from "../../common/components/Form/FormContainer/FormContai
 import InputField from "../../common/components/Form/InputField/InputField";
 
 import { Paths } from "../../common/constants/paths";
-import { login } from "../../store/auth/authApi";
-import type { RootState } from "../../store/store";
 import type { LoginFormValues } from "../../common/types/form";
+import { useLoginMutation } from "../../services/api/auth/authApi";
 
 const LoginPage = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<LoginFormValues>({
+  const { register, handleSubmit } = useForm<LoginFormValues>({
     defaultValues: {
       remember: false,
     },
   });
-  const dispatch = useDispatch();
-  const authError = useSelector((state: RootState) => state.auth.error);
+  const [login, { error }] = useLoginMutation();
   const navigate = useNavigate();
 
-  const onSubmit = (data: LoginFormValues) => {
-    dispatch(login(data));
-    navigate(Paths.DASHBOARD);
+  const onSubmit = async (data: LoginFormValues) => {
+    try {
+      await login(data).unwrap();
+      navigate(Paths.DASHBOARD);
+    } catch (e: any) {
+      console.error("Błąd logowania: ", e);
+    }
   };
 
   return (
@@ -48,7 +45,6 @@ const LoginPage = () => {
             inputId="email"
             placeholder="Wpisz swój email..."
             register={register}
-            error={errors.email?.message}
           />
           <InputField
             type="password"
@@ -56,15 +52,10 @@ const LoginPage = () => {
             inputId="password"
             placeholder="Wpisz swoje hasło..."
             register={register}
-            error={errors.password?.message}
           />
-          {authError && <p className="text-red-500 mt-2">{authError}</p>}
+          {error && <p className="text-red-500 mt-2">Błąd logowania</p>}
           <div className="flex justify-between items-center">
-            <CheckBox
-              checkId="remember-password"
-              labelName="Zapamiętaj mnie"
-              register={register}
-            />
+            <CheckBox checkId="remember-password" labelName="Zapamiętaj mnie" register={register} />
             <a href="#">Nie pamiętasz hasła?</a>
           </div>
           <Button />
