@@ -5,7 +5,7 @@ import { clearAuthStorage, getStoredToken, setAuthStorage } from "../../../store
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5432/api",
+    baseUrl: import.meta.env.VITE_BASE_URL,
     prepareHeaders: (headers) => {
       const token = getStoredToken();
 
