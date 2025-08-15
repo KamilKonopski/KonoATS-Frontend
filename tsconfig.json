@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["vitest"]
+    "types": ["vitest/globals"]
   },
   "files": [],
   "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
