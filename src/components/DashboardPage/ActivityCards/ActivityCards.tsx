@@ -13,25 +13,25 @@ const ActivityCards = () => {
       cardName: "Aktywne oferty",
       cardNumber: 5,
       cardIcon: <OffersIcon />,
-      cardColor: "purple-500",
+      cardColor: "bg-purple-500",
     },
     {
       cardName: "Nowi kandydaci",
       cardNumber: 12,
       cardIcon: <UserIcon />,
-      cardColor: "blue-400",
+      cardColor: "bg-blue-400",
     },
     {
       cardName: "Zaplanowane rozmowy",
       cardNumber: 3,
       cardIcon: <MailingIcon />,
-      cardColor: "emerald-500",
+      cardColor: "bg-emerald-500",
     },
     {
       cardName: "Zakwalifikowani",
       cardNumber: 7,
       cardIcon: <StatsIcon />,
-      cardColor: "orange-400",
+      cardColor: "bg-orange-400",
     },
   ];
   return (

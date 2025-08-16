@@ -7,12 +7,12 @@ interface CardProps {
 
 const Card = ({
   children,
-  cardBgColor = "bg",
-  cardFontColor = "text",
+  cardBgColor = "bg-bg",
+  cardFontColor = "text-text",
   className = "",
 }: CardProps) => {
   return (
-    <article className={`text-${cardFontColor} bg-${cardBgColor} rounded-[6px] ${className}`}>
+    <article className={`${cardFontColor} ${cardBgColor} rounded-[6px] ${className}`}>
       {children}
     </article>
   );
