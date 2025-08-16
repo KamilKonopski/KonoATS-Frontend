@@ -53,12 +53,30 @@ const LoginPage = () => {
             placeholder="Wpisz swoje hasło..."
             register={register}
           />
-          {error && <p className="text-red-500 mt-2">Błąd logowania</p>}
+          {error ? <p className="text-red-500 mt-2">Błąd logowania</p> : null}
           <div className="flex justify-between items-center">
             <CheckBox checkId="remember-password" labelName="Zapamiętaj mnie" register={register} />
             <a href="#">Nie pamiętasz hasła?</a>
           </div>
           <Button />
+          <button
+            type="button"
+            className=" mt-3 bg-primary hover:bg-primary-hover rounded-md h-10 px-6 text-base font-medium transition-colors duration-150 cursor-pointer"
+            onClick={async () => {
+              try {
+                await login({
+                  email: "demo@konoats.com",
+                  password: "demo123",
+                  remember: false,
+                }).unwrap();
+                navigate(Paths.DASHBOARD);
+              } catch (e) {
+                console.error("Błąd logowania Demo:", e);
+              }
+            }}
+          >
+            Zaloguj jako Demo
+          </button>
         </form>
       </FormContainer>
     </>
