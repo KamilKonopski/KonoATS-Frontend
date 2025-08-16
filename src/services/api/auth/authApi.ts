@@ -1,18 +1,23 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { mockBaseQuery } from "../../../mocks/mockBaseQuery";
 import { loginSuccess } from "../../../store/auth/authSlice";
 import { clearAuthStorage, getStoredToken, setAuthStorage } from "../../../store/auth/authStorage";
 
+const isMock = import.meta.env.VITE_USE_MOCK === "true";
+
 export const authApi = createApi({
   reducerPath: "authApi",
-  baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_BASE_URL,
-    prepareHeaders: (headers) => {
-      const token = getStoredToken();
+  baseQuery: isMock
+    ? mockBaseQuery
+    : fetchBaseQuery({
+        baseUrl: import.meta.env.VITE_BASE_URL,
+        prepareHeaders: (headers) => {
+          const token = getStoredToken();
 
-      if (token) headers.set("Authorization", `Bearer ${token}`);
-      return headers;
-    },
-  }),
+          if (token) headers.set("Authorization", `Bearer ${token}`);
+          return headers;
+        },
+      }),
   endpoints: (builder) => ({
     login: builder.mutation<
       { token: string },
