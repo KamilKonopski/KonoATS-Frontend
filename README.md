@@ -51,9 +51,21 @@
 
 Wszystkie klucze API oraz adresy backendowe znajdują się w .env i nie są commitowane.
 
-W pliku .env.example znajdują się przykładowe dane do uruchomienia lokalnie.
+---
 
-Zmienne frontendowe muszą mieć prefix VITE_.
+### 🧳 Tryb DEMO (mock)
+
+Aby uruchomić aplikację w trybie demo (bez backendu), utwórz plik `.env` i dodaj:
+
+VITE_USE_MOCK=true
+
+Następnie uruchom projekt:
+
+npm install
+
+npm run dev
+
+W trybie demo dostępny jest przycisk **"Zaloguj jako Demo"**, który pozwala zalogować się na użytkownika testowego.
 
 ---
 
