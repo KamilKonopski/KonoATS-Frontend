@@ -14,6 +14,7 @@ export enum Paths {
   STATS = "/stats",
   PROFILE = "/profile",
   SETTINGS = "/settings",
+  MY_TASKS = "/my-tasks",
 
   // Not found
   NOT_FOUND = "*",
@@ -31,4 +32,5 @@ export const PathTitleMap: Record<Paths, string> = {
   [Paths.LOGIN]: "Logowanie",
   [Paths.INDEX]: "Start",
   [Paths.NOT_FOUND]: "Nie znaleziono",
+  [Paths.MY_TASKS]: "Moje zadania",
 };
