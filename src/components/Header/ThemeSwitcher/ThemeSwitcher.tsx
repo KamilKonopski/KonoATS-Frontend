@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { applyTheme, type Theme } from "../../../utils/theme";
+import { applyTheme, type Theme } from "../../../common/utils/theme";
 
 const ThemeSwitcher = () => {
   const [theme, setTheme] = useState<Theme>("light");
@@ -9,9 +9,7 @@ const ThemeSwitcher = () => {
 
     if (!saved) {
       applyTheme("system");
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       setTheme(prefersDark ? "dark" : "light");
     } else {
       applyTheme(saved);

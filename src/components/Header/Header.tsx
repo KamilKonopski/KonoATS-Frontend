@@ -1,9 +1,8 @@
 import { useLocation } from "react-router-dom";
 
+import { getTitle } from "../../common/utils/getTitle";
 import ThemeSwitcher from "./ThemeSwitcher/ThemeSwitcher";
 import UserMenu from "./UserMenu/UserMenu";
-
-import { getTitle } from "../../utils/getTitle";
 
 const Header = () => {
   const { pathname } = useLocation();
