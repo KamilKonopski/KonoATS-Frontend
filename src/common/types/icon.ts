@@ -7,3 +7,5 @@ export type IconName =
   | "stats"
   | "settings"
   | "user";
+
+export type ArrowDirection = "left" | "right" | "up" | "down";
