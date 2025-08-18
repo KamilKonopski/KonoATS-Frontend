@@ -10,7 +10,7 @@ const ActivityCard = ({ card }: ActivityCardProps) => {
   return (
     <Card
       cardBgColor={card.cardColor}
-      className="flex justify-center items-center rounded-2xl p-6 w-full md:w-[48%] lg:w-[30%] xl:w-1/6"
+      className="flex justify-center items-center rounded-2xl p-6 w-full md:w-[48%] lg:w-[30%] xl:w-[15%]"
     >
       <div className="flex items-center justify-center rounded-full w-12 h-12 bg-white/30 mr-3">
         {card.cardIcon}
