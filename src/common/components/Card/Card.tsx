@@ -12,7 +12,7 @@ const Card = ({
   className = "",
 }: CardProps) => {
   return (
-    <article className={`${cardFontColor} ${cardBgColor} rounded-[6px] ${className}`}>
+    <article className={`${cardFontColor} text-sm ${cardBgColor} rounded-[6px] ${className}`}>
       {children}
     </article>
   );
