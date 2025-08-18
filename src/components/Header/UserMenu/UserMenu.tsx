@@ -49,6 +49,13 @@ const UserMenu = () => {
             Profil
           </NavLink>
           <NavLink
+            to={Paths.MY_TASKS}
+            className="block w-full px-4 py-2 text-left hover:bg-bg-muted"
+            onClick={() => setOpen(false)}
+          >
+            Zadania
+          </NavLink>
+          <NavLink
             to={Paths.SETTINGS}
             className="block w-full px-4 py-2 text-left hover:bg-bg-muted"
             onClick={() => setOpen(false)}
