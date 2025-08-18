@@ -1,7 +1,7 @@
 import type { BaseQueryFn } from "@reduxjs/toolkit/query";
-import { mockToken } from "./mockData";
+import { mockToken } from "../data/mockUserData";
 
-export const mockBaseQuery: BaseQueryFn = async (args) => {
+export const mockAuthQuery: BaseQueryFn = async (args) => {
   const { url, method, body } = args as any;
 
   // login

@@ -2,15 +2,21 @@ import ButtonLink from "../../../common/components/ButtonLink/ButtonLink";
 import Card from "../../../common/components/Card/Card";
 import Table from "../../../common/components/Table/Table";
 import { Paths } from "../../../common/constants/paths";
+import { useGetRecentlyUpdatedOffertsQuery } from "../../../services/api/offerts/offertsApi";
 import type { IEditedOffert } from "../types/editedOffert";
 import SingleEditedOffert from "./SingleEditedOffert/SingleEditedOffert";
 
 const EditedOfferts = () => {
-  const editedOfferts: IEditedOffert[] = [
-    { id: 1, ofertTitle: "Graphic Designer", ofertStatus: "Otwarta", candidates: 12 },
-    { id: 2, ofertTitle: "Software Engineer", ofertStatus: "Wstrzymana", candidates: 8 },
-    { id: 3, ofertTitle: "Frontend Developer", ofertStatus: "Zakończona", candidates: 5 },
-  ];
+  const { data: recentlyUpdatedOfferts } = useGetRecentlyUpdatedOffertsQuery(3);
+
+  const editedOfferts: IEditedOffert[] =
+    recentlyUpdatedOfferts?.map((offert) => ({
+      id: offert.id,
+      ofertTitle: offert.title,
+      ofertStatus: offert.status,
+      candidates: offert.candidates.length,
+    })) ?? [];
+
   return (
     <Card className="p-5 min-w-[350px]">
       <h2 className="text-3xl font-bold">Ostatnio edytowane oferty</h2>
