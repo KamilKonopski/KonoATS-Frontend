@@ -1,11 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-
-import { logout } from "../../../../store/auth/authSlice";
-
-import { Paths } from "../../../constants/paths";
-import Icon from "../../../icons/Icon";
+import { Paths } from "../../../common/constants/paths";
+import Icon from "../../../common/icons/Icon";
+import { logout } from "../../../store/auth/authSlice";
 
 const UserMenu = () => {
   const [open, setOpen] = useState(false);
@@ -47,6 +45,13 @@ const UserMenu = () => {
             onClick={() => setOpen(false)}
           >
             Profil
+          </NavLink>
+          <NavLink
+            to={Paths.MY_TASKS}
+            className="block w-full px-4 py-2 text-left hover:bg-bg-muted"
+            onClick={() => setOpen(false)}
+          >
+            Zadania
           </NavLink>
           <NavLink
             to={Paths.SETTINGS}

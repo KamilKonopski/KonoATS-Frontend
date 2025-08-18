@@ -13,29 +13,29 @@ const ActivityCards = () => {
       cardName: "Aktywne oferty",
       cardNumber: 5,
       cardIcon: <OffersIcon />,
-      cardColor: "purple-500",
+      cardColor: "bg-purple-500",
     },
     {
       cardName: "Nowi kandydaci",
       cardNumber: 12,
       cardIcon: <UserIcon />,
-      cardColor: "blue-400",
+      cardColor: "bg-blue-400",
     },
     {
       cardName: "Zaplanowane rozmowy",
       cardNumber: 3,
       cardIcon: <MailingIcon />,
-      cardColor: "emerald-500",
+      cardColor: "bg-emerald-500",
     },
     {
       cardName: "Zakwalifikowani",
       cardNumber: 7,
       cardIcon: <StatsIcon />,
-      cardColor: "orange-400",
+      cardColor: "bg-orange-400",
     },
   ];
   return (
-    <div className="flex gap-5 w-full justify-center mt-5 px-5 sm:px-[20px] md:px-[40px] xl:px-[60px] flex-wrap">
+    <div className="flex gap-5 w-full justify-center mt-5 flex-wrap">
       {activityCards.map((card) => (
         <ActivityCard key={card.cardName} card={card} />
       ))}

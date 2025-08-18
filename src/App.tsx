@@ -21,6 +21,7 @@ import StatsPage from "./components/StatsPage/StatsPage";
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 
 import { Paths } from "./common/constants/paths";
+import MyTaskPage from "./components/MyTaskPage/MyTaskPage";
 import { loginSuccess } from "./store/auth/authSlice";
 import { getStoredToken } from "./store/auth/authStorage";
 
@@ -71,6 +72,7 @@ const App = () => {
           <Route path={Paths.STATS} element={<StatsPage />} />
           <Route path={Paths.PROFILE} element={<ProfilePage />} />
           <Route path={Paths.SETTINGS} element={<SettingsPage />} />
+          <Route path={Paths.MY_TASKS} element={<MyTaskPage />} />
         </Route>
 
         <Route path={Paths.NOT_FOUND} element={<NotFoundPage />} />

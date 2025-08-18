@@ -15,7 +15,7 @@ const NavigationItem = ({ to, icon, label }: NavigationItemProps) => (
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `flex gap-8 items-center px-4 py-2 rounded-lg transition-all ${
+        `flex gap-8 items-center px-4 py-2 text-base rounded-lg transition-all ${
           isActive ? "bg-primary text-white" : "text-text hover:bg-bg-muted"
         }`
       }
