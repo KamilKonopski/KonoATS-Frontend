@@ -35,7 +35,7 @@ const ActivityCards = () => {
     },
   ];
   return (
-    <div className="flex gap-5 w-full justify-center mt-5 px-5 sm:px-[20px] md:px-[40px] xl:px-[60px] flex-wrap">
+    <div className="flex gap-5 w-full justify-center mt-5 flex-wrap">
       {activityCards.map((card) => (
         <ActivityCard key={card.cardName} card={card} />
       ))}
