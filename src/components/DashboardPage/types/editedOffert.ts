@@ -1,6 +1,6 @@
 export interface IEditedOffert {
   id: string;
   ofertTitle: string;
-  ofertStatus: string;
+  ofertStatus: "Otwarta" | "Zamknięta" | "Wstrzymana";
   candidates: number;
 }
