@@ -23,4 +23,7 @@ export interface JobOffer {
   createdAt: string;
   updatedAt: string;
   candidates: string[];
+  numberOfOpenings: number;
+  validUntil: string;
+  source: string;
 }
