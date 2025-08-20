@@ -27,6 +27,9 @@ export const jobOffers: JobOffer[] = [
     createdAt: "2025-04-01",
     updatedAt: "2025-08-10",
     candidates: ["cand-1", "cand-15", "cand-30"],
+    numberOfOpenings: 1,
+    validUntil: "2025-12-31",
+    source: "careerPage",
   },
   {
     id: "offer-2",
@@ -54,6 +57,9 @@ export const jobOffers: JobOffer[] = [
     createdAt: "2025-07-15",
     updatedAt: "2025-08-12",
     candidates: ["cand-5", "cand-17", "cand-26"],
+    numberOfOpenings: 3,
+    validUntil: "2025-12-31",
+    source: "careerPage",
   },
   {
     id: "offer-3",
@@ -81,6 +87,9 @@ export const jobOffers: JobOffer[] = [
     createdAt: "2025-06-10",
     updatedAt: "2025-08-05",
     candidates: ["cand-7", "cand-19", "cand-24"],
+    numberOfOpenings: 3,
+    validUntil: "2025-12-31",
+    source: "careerPage",
   },
   {
     id: "offer-4",
@@ -108,6 +117,9 @@ export const jobOffers: JobOffer[] = [
     createdAt: "2025-05-01",
     updatedAt: "2025-08-01",
     candidates: ["cand-8", "cand-20", "cand-23"],
+    numberOfOpenings: 3,
+    validUntil: "2025-12-31",
+    source: "careerPage",
   },
   {
     id: "offer-5",
@@ -135,6 +147,9 @@ export const jobOffers: JobOffer[] = [
     createdAt: "2025-03-20",
     updatedAt: "2025-07-30",
     candidates: ["cand-6", "cand-18", "cand-25"],
+    numberOfOpenings: 1,
+    validUntil: "2025-12-31",
+    source: "careerPage",
   },
   {
     id: "offer-6",
@@ -162,6 +177,9 @@ export const jobOffers: JobOffer[] = [
     createdAt: "2025-04-05",
     updatedAt: "2025-08-09",
     candidates: ["cand-2", "cand-16", "cand-29"],
+    numberOfOpenings: 3,
+    validUntil: "2025-12-31",
+    source: "careerPage",
   },
   {
     id: "offer-7",
@@ -189,6 +207,9 @@ export const jobOffers: JobOffer[] = [
     createdAt: "2025-07-01",
     updatedAt: "2025-08-13",
     candidates: ["cand-9", "cand-11", "cand-22"],
+    numberOfOpenings: 3,
+    validUntil: "2025-12-31",
+    source: "careerPage",
   },
   {
     id: "offer-8",
@@ -216,6 +237,9 @@ export const jobOffers: JobOffer[] = [
     createdAt: "2025-05-25",
     updatedAt: "2025-08-10",
     candidates: ["cand-10", "cand-12", "cand-21"],
+    numberOfOpenings: 1,
+    validUntil: "2025-12-31",
+    source: "careerPage",
   },
   {
     id: "offer-9",
@@ -236,17 +260,20 @@ export const jobOffers: JobOffer[] = [
     teamSize: "8-12",
     benefits: ["Udział w zyskach", "Work-life balance", "Szkolenia leadershipowe"],
     technologies: {
-      mustHave: [],
-      niceToHave: ["Jira", "Figma", "Confluence"],
+      mustHave: ["Jira", "Figma", "Confluence"],
+      niceToHave: [],
     },
     company: "TechNova",
     createdAt: "2025-02-18",
     updatedAt: "2025-08-01",
     candidates: ["cand-4", "cand-14", "cand-27"],
+    numberOfOpenings: 2,
+    validUntil: "2025-12-31",
+    source: "careerPage",
   },
   {
     id: "offer-10",
-    title: "Junior Frontend Developer",
+    title: "Frontend Developer",
     description: "Poszukujemy Junior Frontend Developera z pasją do Reacta i chęcią nauki.",
     requirements: [
       "Znajomość HTML, CSS, JavaScript",
@@ -270,5 +297,8 @@ export const jobOffers: JobOffer[] = [
     createdAt: "2025-08-10",
     updatedAt: "2025-08-18",
     candidates: ["cand-3", "cand-13", "cand-28"],
+    numberOfOpenings: 2,
+    validUntil: "2025-12-31",
+    source: "careerPage",
   },
 ];

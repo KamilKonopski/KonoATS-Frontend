@@ -7,10 +7,10 @@ interface SingleCandidateProps {
 
 const SingleCandidate = ({ candidate }: SingleCandidateProps) => {
   return (
-    <ButtonLink to="/" className="flex flex-wrap justify-between">
-      <p className="flex-1">{candidate.fullname}</p>
-      <p className="flex-1">{candidate.applied}</p>
-      <p className="flex-1">{candidate.cvFile}</p>
+    <ButtonLink to="/" className="flex flex-wrap justify-between border-b-2 border-primary py-4">
+      <p className="flex-1 text-center">{candidate.fullname}</p>
+      <p className="flex-1 text-center">{candidate.applied}</p>
+      <p className="flex-1 text-center">{candidate.cvFile}</p>
     </ButtonLink>
   );
 };

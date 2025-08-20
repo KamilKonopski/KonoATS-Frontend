@@ -11,12 +11,10 @@ const ButtonLink = ({ to, children, className = "" }: ButtonLinkProps) => {
   return (
     <Link
       to={to}
-      className={`inline-flex items-center gap-2
+      className={`inline-flex items-center 
     px-4 py-2
     text-primary
     text-sm font-medium
-    rounded-md
-    border border-transparent
     transition-colors
     hover:bg-primary-hover/10 
     hover:text-primary-hover

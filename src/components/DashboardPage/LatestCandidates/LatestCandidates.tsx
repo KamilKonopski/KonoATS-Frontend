@@ -21,15 +21,17 @@ const LatestCandidates = () => {
       <h2 className="text-3xl font-bold">Najnowsi Kandydaci</h2>
       <Table>
         <div className="flex flex-wrap justify-between text-text-muted border-b-2 pb-2 border-primary">
-          <p className="flex-1">Imię i nazwisko</p>
-          <p className="flex-1">Aplikował</p>
-          <p className="flex-1">CV</p>
+          <p className="flex-1 text-center">Imię i nazwisko</p>
+          <p className="flex-1 text-center">Aplikował</p>
+          <p className="flex-1 text-center">CV</p>
         </div>
         {latestCandidates.map((candidate) => (
           <SingleCandidate key={candidate.id} candidate={candidate} />
         ))}
       </Table>
-      <ButtonLink to={Paths.CANDIDATES}>Pokaż wszystkich kandydatów</ButtonLink>
+      <ButtonLink className="rounded-md" to={Paths.CANDIDATES}>
+        Pokaż wszystkich kandydatów
+      </ButtonLink>
     </Card>
   );
 };

@@ -7,10 +7,10 @@ interface SingleEditedOffertProps {
 
 const SingleEditedOffert = ({ offert }: SingleEditedOffertProps) => {
   return (
-    <ButtonLink to="/">
-      <p className="flex-1 mr-5">{offert.ofertTitle}</p>
-      <p className="flex-1 mr-10">{offert.ofertStatus}</p>
-      <p className="flex-1">{offert.candidates}</p>
+    <ButtonLink to="/" className="border-b-2 border-primary py-4">
+      <p className="flex-1 text-center">{offert.ofertTitle}</p>
+      <p className="flex-1 text-center">{offert.ofertStatus}</p>
+      <p className="flex-1 text-center">{offert.candidates}</p>
     </ButtonLink>
   );
 };

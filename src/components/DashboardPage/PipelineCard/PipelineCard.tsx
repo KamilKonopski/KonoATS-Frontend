@@ -33,7 +33,9 @@ const PipelineCard = () => {
           <SingleStatus key={status.id} status={status} />
         ))}
       </article>
-      <ButtonLink to={Paths.PIPELINE}>Pokaż pełny pipeline</ButtonLink>
+      <ButtonLink className="rounded-md" to={Paths.PIPELINE}>
+        Pokaż pełny pipeline
+      </ButtonLink>
     </Card>
   );
 };
