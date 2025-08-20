@@ -20,7 +20,9 @@ const TasksCard = () => {
           <SingleTask key={task.id} task={task} />
         ))}
       </Table>
-      <ButtonLink to={Paths.MY_TASKS}>Pokaż wszystkie zadania</ButtonLink>
+      <ButtonLink className="rounded-md" to={Paths.MY_TASKS}>
+        Pokaż wszystkie zadania
+      </ButtonLink>
     </Card>
   );
 };
