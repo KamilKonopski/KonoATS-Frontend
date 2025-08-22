@@ -1,94 +1,101 @@
-# 🧠 KonoATS – System wspomagający rekrutację
+# 🧠 KonoATS – Applicant Tracking System
 
-**KonoATS** to aplikacja typu **ATS (Applicant Tracking System)** stworzona z myślą o małych i średnich firmach, startupach oraz rekruterach technicznych. Projekt ma charakter edukacyjny i demonstracyjny, ale zachowuje strukturę zgodną ze standardami produkcyjnymi.
+**KonoATS** is an **Applicant Tracking System (ATS)** application designed for small and medium-sized companies, startups, and technical recruiters.  
+The project is educational and demonstrative in nature, but it follows a production-ready structure.
 
+⭐ If you want to follow the project’s progress and get notified about the release, don’t forget to star the repository!
 
-
-⭐ Jeśli chcesz zobaczyć, jak projekt się rozwija i dostać powiadomienie o premierze, dodaj gwiazdkę repozytorium!
-
-
-
-ℹ️ Uwaga: To repozytorium zawiera frontend (PWA) projektu KonoATS. Backend (C# / .NET + PostgreSQL) rozwijany jest w repozytorium prywatnym.
-
-## ✨ Główne funkcje
-
-🔐 **Część chroniona – panel rekrutera (PWA)**:
-
-- 📊 **Dashboard** – szybki przegląd aktywności i statystyk
-- 📌 **Oferty pracy** – tworzenie, edycja, archiwizacja
-- 👤 **Kandydaci** – przeglądanie aplikacji, CV, notatki, zadania rekrutacyjne
-- 🔄 **Pipeline rekrutacyjny** – etapy typu _Applied → Interview → Offer → Rejected_
-- ✉️ **Mailing** – wysyłka szablonowych wiadomości (zaproszenia, oferty, odrzucenia)
-- 📈 **Statystyki** (opcjonalne)
+ℹ️ Note: This repository contains the **frontend (PWA)** of KonoATS. The backend (C# / .NET + PostgreSQL) is being developed in a private repository.
 
 ---
 
-## 🛠️ Technologie
+## ✨ Main Features
 
-### 🎯 Frontend (PWA) (Repozytorium publiczne)
+🔐 **Protected area – Recruiter panel (PWA):**
 
-- **React 19 + TypeScript**
-- **Vite** – szybki bundler i dev server
-- **Redux Toolkit** – globalny store + async API slice
-- **React Router v7**
-- **React Hook Form + Zod** – formularze i walidacja
-- **TailwindCSS + CSS Modules** – design system
-- **PWA** – instalowalna aplikacja webowa (manifest, offline, cache)
-
-### 🧩 Backend (Repozytorium prywatne)
-
-- **.NET 9 (C#)**
-- **Entity Framework Core (Code First) + PostgreSQL**
-- **REST API**
-- **Autoryzacja JWT**
-- **Wysyłka maili**: SMTP lub MailerSend
-- **FluentValidation** – walidacja po stronie backendu
-- **Serwowanie API**: lokalnie / Railway / Render
+- 📊 **Dashboard** – quick overview of activity and statistics  
+- 📌 **Job offers** – create, edit, archive  
+- 👤 **Candidates** – browse applications, CVs, notes, recruitment tasks  
+- 🔄 **Recruitment pipeline** – stages such as _Applied → Interview → Offer → Rejected_  
+- ✉️ **Mailing** – send template messages (invitations, offers, rejections)  
+- 📈 **Statistics** (optional)  
 
 ---
 
-## 🔐 Bezpieczeństwo i prywatność
+## 🛠️ Tech Stack
 
-Wszystkie klucze API oraz adresy backendowe znajdują się w .env i nie są commitowane.
+### 🎯 Frontend (PWA) (Public repository)
+
+- **React 19 + TypeScript**  
+- **Vite** – fast bundler and dev server  
+- **Redux Toolkit** – global store + async API slice  
+- **React Router v7**  
+- **React Hook Form + Zod** – forms and validation  
+- **TailwindCSS + CSS Modules** – design system  
+- **PWA** – installable web app (manifest, offline, cache)  
+
+### 🧩 Backend (Private repository)
+
+- **.NET 9 (C#)**  
+- **Entity Framework Core (Code First) + PostgreSQL**  
+- **REST API**  
+- **JWT authentication**  
+- **Email sending**: SMTP or MailerSend  
+- **FluentValidation** – backend validation  
+- **Hosting API**: locally / Railway / Render  
 
 ---
 
-### 🧳 Tryb DEMO (mock)
+## 🔐 Security & Privacy
 
-Aby uruchomić aplikację w trybie demo (bez backendu), utwórz plik `.env` i dodaj:
+All API keys and backend URLs are stored in `.env` files and are not committed to the repository.  
+
+---
+
+## 🧳 DEMO Mode (mock)
+
+To run the app in demo mode (without backend), create a `.env` file with:
+
 
 VITE_USE_MOCK=true
 
-Następnie uruchom projekt:
-
+Then install and run the project:
+```bash
 npm install
 
 npm run dev
 
-W trybie demo dostępny jest przycisk **"Zaloguj jako Demo"**, który pozwala zalogować się na użytkownika testowego.
+```
 
----
+In demo mode you can use the "Login as Demo" button to log in as a test user.
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
+
 Kamil Konopski
+Frontend Developer & project creator
 
-Frontend Developer & twórca projektu
-
-Repozytorium stworzone do nauki, rozwoju portfolio i eksperymentów technologicznych.
+This repository was created for learning purposes, portfolio building, and technology experiments.
 
 ---
 
-## 📜 Licencja
-Projekt objęty autorską licencją (poniżej).
+## 📜 License
 
-Nie zezwala się na:
+This project is covered by a custom license (see below).
 
-wykorzystywanie kodu w projektach komercyjnych,
+The following are not allowed:
 
-modyfikację i udostępnianie kodu jako własnego,
+Using the code in commercial projects
 
-klonowanie repozytorium w celach dystrybucyjnych lub sprzedażowych.
+Modifying and redistributing the code as your own
 
-Kod może być przeglądany, uruchamiany lokalnie i wykorzystywany do celów edukacyjnych.
+Cloning the repository for distribution or sales purposes
 
-Więcej informacji: LICENSE
+You may:
+
+Browse the code
+
+Run it locally
+
+Use it for educational purposes
+
+More information: LICENSE
