@@ -1,30 +1,34 @@
-import ButtonLink from "../../common/components/ButtonLink/ButtonLink";
 import Card from "../../common/components/Card/Card";
-import Table from "../../common/components/Table/Table";
+import ListContent from "../../common/components/ListItem/ListContent/ListContent";
+import ListHeader from "../../common/components/ListItem/ListHeader/ListHeader";
+
+import ListItem from "../../common/components/ListItem/ListItem";
 import { useGetAllOffertsQuery } from "../../services/api/offerts/offertsApi";
 
 const OffersPage = () => {
   const { data: allOfferts } = useGetAllOffertsQuery();
   return (
     <Card className="w-3/4 min-w-[350px] mx-auto p-5">
-      <Table>
-        <div className="flex pb-2 pl-4 pr-8 text-text-muted border-b-2 border-primary">
-          <p className="flex-1 text-center">Nazwa oferty</p>
-          <p className="flex-1 text-center">Poziom</p>
-          <p className="flex-1 text-center"> Status oferty</p>
-          <p className="flex-1 text-center">Data utworzenia</p>
-          <p className="flex-1 text-center">Liczba kandydatów</p>
-        </div>
+      <ListItem>
+        <ListHeader
+          columns={[
+            "Nazwa oferty",
+            "Poziom",
+            "Status oferty",
+            "Data utworzenia",
+            "Liczba kandydatów",
+          ]}
+        />
         {allOfferts?.map((offert) => (
-          <ButtonLink to="/" className="border-b-2 border-primary py-4">
+          <ListContent key={offert.id} to="/">
             <p className="flex-1 text-center">{offert.title}</p>
             <p className="flex-1 text-center">{offert.level}</p>
             <p className="flex-1 text-center">{offert.status}</p>
             <p className="flex-1 text-center">{offert.createdAt}</p>
             <p className="flex-1 text-center">{offert.candidates.length}</p>
-          </ButtonLink>
+          </ListContent>
         ))}
-      </Table>
+      </ListItem>
     </Card>
   );
 };

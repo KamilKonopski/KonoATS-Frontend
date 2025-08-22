@@ -1,6 +1,6 @@
 import ButtonLink from "../../../common/components/ButtonLink/ButtonLink";
 import Card from "../../../common/components/Card/Card";
-import Table from "../../../common/components/Table/Table";
+import ListItem from "../../../common/components/ListItem/ListItem";
 import { Paths } from "../../../common/constants/paths";
 import type { Task } from "../types/task";
 import SingleTask from "./SingleTask/SingleTask";
@@ -15,12 +15,12 @@ const TasksCard = () => {
   return (
     <Card className="p-5 min-w-[350px]">
       <h2 className="text-3xl font-bold text-text">Moje zadania</h2>
-      <Table>
+      <ListItem>
         {tasks.map((task) => (
           <SingleTask key={task.id} task={task} />
         ))}
-      </Table>
-      <ButtonLink className="rounded-md" to={Paths.MY_TASKS}>
+      </ListItem>
+      <ButtonLink className="rounded-md px-4 py-2" to={Paths.MY_TASKS}>
         Pokaż wszystkie zadania
       </ButtonLink>
     </Card>

@@ -12,7 +12,6 @@ const ButtonLink = ({ to, children, className = "" }: ButtonLinkProps) => {
     <Link
       to={to}
       className={`inline-flex items-center 
-    px-4 py-2
     text-primary
     text-sm font-medium
     transition-colors
