@@ -12,7 +12,7 @@ import type { IActivityCard } from "../types/activityCard";
 import ActivityCard from "./ActivityCard/ActivityCard";
 
 const ActivityCards = () => {
-  const { data: allOfferts } = useGetAllOffertsQuery();
+  const { data: allOfferts } = useGetAllOffertsQuery({});
   const activeOfferts = allOfferts?.filter((offert) => offert.status === OffertStatus.OPEN);
   const { data: allCandidates } = useGetAllCandidatesQuery();
   const newCandidates = allCandidates?.filter(
