@@ -28,7 +28,28 @@ const LoginPage = () => {
     }
   };
 
-  return (
+  const isMock = import.meta.env.VITE_USE_MOCK === "true";
+
+  return isMock ? (
+    <button
+      type="button"
+      className=" mt-3 bg-primary hover:bg-primary-hover rounded-md h-10 px-6 text-base font-medium transition-colors duration-150 cursor-pointer"
+      onClick={async () => {
+        try {
+          await login({
+            email: "demo@konoats.com",
+            password: "demo123",
+            remember: false,
+          }).unwrap();
+          navigate(Paths.DASHBOARD);
+        } catch (e) {
+          console.error("Błąd logowania Demo:", e);
+        }
+      }}
+    >
+      Zaloguj jako Demo
+    </button>
+  ) : (
     <>
       <header className="flex gap-2.5 items-center text-4xl">
         <div className="w-[50px] h-[50px] rounded-[50%] flex items-center justify-center">
@@ -59,24 +80,6 @@ const LoginPage = () => {
             <a href="#">Nie pamiętasz hasła?</a>
           </div>
           <Button />
-          <button
-            type="button"
-            className=" mt-3 bg-primary hover:bg-primary-hover rounded-md h-10 px-6 text-base font-medium transition-colors duration-150 cursor-pointer"
-            onClick={async () => {
-              try {
-                await login({
-                  email: "demo@konoats.com",
-                  password: "demo123",
-                  remember: false,
-                }).unwrap();
-                navigate(Paths.DASHBOARD);
-              } catch (e) {
-                console.error("Błąd logowania Demo:", e);
-              }
-            }}
-          >
-            Zaloguj jako Demo
-          </button>
         </form>
       </FormContainer>
     </>
