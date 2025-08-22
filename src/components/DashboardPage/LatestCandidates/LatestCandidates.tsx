@@ -1,6 +1,7 @@
 import ButtonLink from "../../../common/components/ButtonLink/ButtonLink";
 import Card from "../../../common/components/Card/Card";
-import Table from "../../../common/components/Table/Table";
+import ListHeader from "../../../common/components/ListItem/ListHeader/ListHeader";
+import ListItem from "../../../common/components/ListItem/ListItem";
 import { Paths } from "../../../common/constants/paths";
 import { useGetRecentlyAddedCandidatesQuery } from "../../../services/api/candidates/candidatesApi";
 import type { ICandidate } from "../types/candidateCard";
@@ -19,17 +20,13 @@ const LatestCandidates = () => {
   return (
     <Card className="p-5 min-w-[350px]">
       <h2 className="text-3xl font-bold">Najnowsi Kandydaci</h2>
-      <Table>
-        <div className="flex flex-wrap justify-between text-text-muted border-b-2 pb-2 border-primary">
-          <p className="flex-1 text-center">Imię i nazwisko</p>
-          <p className="flex-1 text-center">Aplikował</p>
-          <p className="flex-1 text-center">CV</p>
-        </div>
+      <ListItem>
+        <ListHeader columns={["Imię i nazwisko", "Aplikował", "CV"]} />
         {latestCandidates.map((candidate) => (
           <SingleCandidate key={candidate.id} candidate={candidate} />
         ))}
-      </Table>
-      <ButtonLink className="rounded-md" to={Paths.CANDIDATES}>
+      </ListItem>
+      <ButtonLink className="rounded-md px-4 py-2" to={Paths.CANDIDATES}>
         Pokaż wszystkich kandydatów
       </ButtonLink>
     </Card>
