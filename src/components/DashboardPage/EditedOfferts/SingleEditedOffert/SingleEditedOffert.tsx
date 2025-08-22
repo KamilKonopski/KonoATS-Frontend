@@ -1,4 +1,4 @@
-import ButtonLink from "../../../../common/components/ButtonLink/ButtonLink";
+import ListContent from "../../../../common/components/ListItem/ListContent/ListContent";
 import type { IEditedOffert } from "../../types/editedOffert";
 
 interface SingleEditedOffertProps {
@@ -7,11 +7,11 @@ interface SingleEditedOffertProps {
 
 const SingleEditedOffert = ({ offert }: SingleEditedOffertProps) => {
   return (
-    <ButtonLink to="/" className="border-b-2 border-primary py-4">
+    <ListContent to="/">
       <p className="flex-1 text-center">{offert.ofertTitle}</p>
       <p className="flex-1 text-center">{offert.ofertStatus}</p>
       <p className="flex-1 text-center">{offert.candidates}</p>
-    </ButtonLink>
+    </ListContent>
   );
 };
 
