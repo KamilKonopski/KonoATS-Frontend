@@ -7,6 +7,12 @@ export const mockOffertsQuery: BaseQueryFn = async (args) => {
   if (url === "job-offerts" && method === "GET") {
     let filteredOffers = [...jobOffers];
 
+    if (params?.search) {
+      filteredOffers = filteredOffers.filter((offert) =>
+        offert.title.toLowerCase().includes(params.search.toLowerCase())
+      );
+    }
+
     if (params?.limit) {
       filteredOffers = filteredOffers.slice(0, Number(params.limit));
     }
