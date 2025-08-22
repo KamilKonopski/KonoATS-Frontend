@@ -1,10 +1,11 @@
 interface FormContainerProps {
   children: React.ReactNode;
+  className?: string;
 }
 
-const FormContainer = ({ children }: FormContainerProps) => {
+const FormContainer = ({ children, className = "" }: FormContainerProps) => {
   return (
-    <div className="max-w-md min-w-[400px] mx-auto mt-16 p-6 bg-bg-muted rounded-xl shadow-md">
+    <div className={`min-w-[400px] p-6 bg-bg-muted rounded-xl shadow-md ${className}`}>
       {children}
     </div>
   );
