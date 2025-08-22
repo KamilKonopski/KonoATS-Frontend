@@ -1,17 +1,17 @@
-Educational Use License – by Kamil Konopski
+# Educational Use License – by Kamil Konopski
 
-Copyright (c) 2025 Kamil Konopski
+Copyright (c) 2025 Kamil Konopski  
 
-Ten projekt jest udostępniany wyłącznie do celów edukacyjnych i demonstracyjnych.
+This project is provided **for educational and demonstrational purposes only**.
 
-Zabrania się:
-- komercyjnego wykorzystania tego projektu lub jego fragmentów,
-- modyfikowania i rozpowszechniania jako własnego dzieła,
-- klonowania repozytorium w celu dalszej dystrybucji lub sprzedaży.
+### Prohibited:
+- Commercial use of this project or any of its parts  
+- Modifying and redistributing the code as your own work  
+- Cloning this repository for further distribution or sales purposes  
 
-Dopuszcza się:
-- lokalne uruchomienie projektu,
-- analizę i przegląd kodu źródłowego w celach edukacyjnych,
-- wykorzystanie inspiracji do własnych projektów (z wyłączeniem kopiowania kodu).
+### Permitted:
+- Running the project locally  
+- Analyzing and reviewing the source code for educational purposes  
+- Using the project as inspiration for your own work (excluding direct code copying)  
 
-Wszelkie prawa zastrzeżone.
+All rights reserved.
