@@ -13,6 +13,20 @@ export const mockOffertsQuery: BaseQueryFn = async (args) => {
       );
     }
 
+    if (params?.level) {
+      filteredOffers = filteredOffers.filter((offert) => offert.level === params.level);
+    }
+
+    if (params.contractType?.length) {
+      filteredOffers = filteredOffers.filter((offer) =>
+        offer.contractType.some((contract) => params.contractType.includes(contract))
+      );
+    }
+
+    if (params?.location) {
+      filteredOffers = filteredOffers.filter((offert) => offert.location === params.location);
+    }
+
     if (params?.limit) {
       filteredOffers = filteredOffers.slice(0, Number(params.limit));
     }
