@@ -18,8 +18,12 @@ export const offertsApi = createApi({
         },
       }),
   endpoints: (builder) => ({
-    getAllOfferts: builder.query<JobOffer[], void>({
-      query: () => ({ url: "job-offerts", method: "GET" }),
+    getAllOfferts: builder.query<JobOffer[], { search?: string }>({
+      query: ({ search }) => ({
+        url: "job-offerts",
+        method: "GET",
+        params: search ? { search } : {},
+      }),
       transformErrorResponse: (response: JobOffer[]) => response || [],
     }),
     getLimitedOfferts: builder.query<JobOffer[], number>({

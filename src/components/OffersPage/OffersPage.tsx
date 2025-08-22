@@ -1,14 +1,21 @@
+import { useState } from "react";
 import Card from "../../common/components/Card/Card";
 import ListContent from "../../common/components/ListItem/ListContent/ListContent";
 import ListHeader from "../../common/components/ListItem/ListHeader/ListHeader";
 
 import ListItem from "../../common/components/ListItem/ListItem";
+import { useDebounce } from "../../common/utils/debounce";
 import { useGetAllOffertsQuery } from "../../services/api/offerts/offertsApi";
+import SearchBar from "./SearchBar/SearchBar";
 
 const OffersPage = () => {
-  const { data: allOfferts } = useGetAllOffertsQuery();
+  const [searchTerm, setSearchTerm] = useState("");
+  const debouncedSearchTerm = useDebounce(searchTerm, 300);
+
+  const { data: allOfferts } = useGetAllOffertsQuery({ search: debouncedSearchTerm });
   return (
     <Card className="w-3/4 min-w-[350px] mx-auto p-5">
+      <SearchBar value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
       <ListItem>
         <ListHeader
           columns={[
